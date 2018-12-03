@@ -1,0 +1,383 @@
+{
+	"info": {
+		"_postman_id": "7d8f43ed-f624-4678-952c-7af398e3e6a9",
+		"name": "BlogServerRequests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create New User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"fsdg\",\n\t\"password\" : \"7864\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show All users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/users?type=show_all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "show_all"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show a user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"_id\": \"5c01ccd20616cd0e146e5419\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/users?type=by_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "by_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit the User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"_id\" : \"5c01ccd20616cd0e146e5419\",\n    \"name\": \"Kolya\",\n    \"password\": \"4564546\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"_id\" : \"5c01ccd20616cd0e146e5419\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Create New Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"author_id\" : \"5c01c8ad0616cd2fdc1fe6d8\",\n\t\"post\" : \"I'm there!\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show All posts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/posts?type=show_all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "show_all"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show the Post",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\": \"5c01cdef0616cd1d60d25af3\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/posts?type=post_by_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "post_by_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show User's Posts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"author_id\" : \"5c01c8ad0616cd2fdc1fe6d8\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/posts?type=show_by_author",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "show_by_author"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit the Post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"_id\": \"5c019d06d1c84d08bc79c332\",\n\t\"author_id\" : \"5bfd76310d9934fa11fbb257\",\n\t\"post\" : \"Hello!\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the Post",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\": \"5c00278c0616cd3c70db9178\",\n    \"author_id\" : \"5bfd76310d9934fa11fbb256\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
